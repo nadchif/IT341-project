@@ -23,12 +23,12 @@ class Database {
 	}
 	
 	public function open_connection() {
-		$this->conn = mysql_connect("database","root","tiger", "dbpims");
+		$this->conn = mysql_connect("database","docker","docker", "docker");
 		if(!$this->conn){
 			echo "Problem in database connection! Contact administrator!";
 			exit();
 		}else{
-			$db_select = mysql_select_db(DB_NAME,$this->conn);
+			$db_select = mysql_select_db("docker",$this->conn);
 			if (!$db_select) {
 				echo "Problem in selecting database! Contact administrator!";
 				exit();
